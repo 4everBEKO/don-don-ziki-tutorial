@@ -58,12 +58,16 @@ body {
 
 .score {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   font-size: 1.2rem;
   color: #fff;
 }
 
 .score p:first-child {
+  background: var(--win-color);
+}
+
+.score p:nth-child(2) {
   background: var(--primary-color);
 }
 
@@ -89,6 +93,10 @@ body {
 
 .text-win {
   color: var(--win-color);
+}
+
+.text-draw {
+  color: var(--primary-color);
 }
 
 .text-lose {

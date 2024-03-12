@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   scoreBoard = {
     player: 0,
+    draw: 0,
     computer: 0
   };
 
@@ -73,8 +74,9 @@ window.addEventListener('DOMContentLoaded', () => {
       <p>Computer choise <strong>${computerChoise.charAt(0).toUpperCase() + computerChoise.slice(1)}</strong></p>
       `
     } else {
+      scoreBoard.draw++
       result.innerHTML = `
-        <h1>It's A Draw</h1>
+        <h1 class="text-draw">It's A Draw</h1>
         <i class="fas fa-hand-${computerChoise} fa-10x"></i>
         <p>Computer choise <strong>${computerChoise.charAt(0).toUpperCase() + computerChoise.slice(1)}</strong></p>
       `
@@ -82,6 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     score.innerHTML = `
     <p> Player: ${scoreBoard.player}</p>
+    <p> Draw: ${scoreBoard.draw}</p>
     <p> Computer: ${scoreBoard.computer}</p>
     `
 
@@ -91,9 +94,11 @@ window.addEventListener('DOMContentLoaded', () => {
   //RestartGame
   function restartGame() {
     scoreBoard.player = 0
+    scoreBoard.draw = 0
     scoreBoard.computer = 0
     score.innerHTML = `
     <p> Player: ${scoreBoard.player}</p>
+    <p> Draw: ${scoreBoard.draw}</p>
     <p> Computer: ${scoreBoard.computer}</p>
     `
   }
